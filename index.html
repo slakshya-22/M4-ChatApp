@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="./logo.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/e49327de27.js" crossorigin="anonymous"></script>
+    <script defer src="./script.js"></script>
+    <script src="./userData.js"></script>
+  </head>
+  <body>
+    <div class="chat-app">
+      <div class="sidebar">
+        <header class="side-hdr">
+          <div class="logo-header">
+            <img src="./logo.svg" alt="Logo" class="logo" />
+            <h4>ChatAPP</h4>
+          </div>
+          <div class="menu">
+            <button class="menu-btn" type="button" id="menuBtn">Menu</button>
+            <div class="menu-list" aria-labelledby="menuBtn">
+              <div class="menu-item">
+                <input
+                  type="text"
+                  placeholder="Search User"
+                  class="usr-search"
+                  oninput="searchUser(event)"
+                />
+              </div>
+              <div class="menu-item">
+                <select onchange="changeTheme(event)" class="theme-select">
+                  <option>Change theme</option>
+                  <option>red</option>
+                  <option>blue</option>
+                  <option>green</option>
+                  <option>dark</option>
+                </select>
+              </div>
+              <div class="menu-item">
+                <select onchange="changeBackground(event)" class="bg-select">
+                  <option>Change background</option>
+                  <option>image1</option>
+                  <option>image2</option>
+                  <option>image3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="user-list"></div>
+      </div>
+      <!-- Right side -->
+      <div class="chat-area">
+        <header>
+          <div class="btn-back" onclick="backPage()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <h4>CHAT DETAILS</h4>
+          <div><i class="fa-solid fa-x"></i></div>
+        </header>
+        <div class="chat-content">
+          <div class="user-profile">
+            <div class="profile-info">
+              <div class="profile-img">
+                <span>
+                  <img
+                    src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-942065100-copy.jpg?resize=1200:*"
+                    alt="John Mayers"
+                  />
+                  <div class="online-indicator"></div>
+                </span>
+              </div>
+              <div class="profile-details">
+                <p class="profile-name">John Mayers</p>
+                <p class="profile-role">Accountant</p>
+              </div>
+            </div>
+          </div>
+          <div class="messages">
+            <div class="msg-left">
+              <p class="msg-left-text">Hi, how can I help you?</p>
+            </div>
+            <div class="msg-right">
+              <p class="msg-right-text">
+                Hi guys Ive got the O2 package and have really slow internet. A
+                speed check online said i can get 3mbps but it seems more like
+                0.5 these days, just freezing and taking ages to open pages and
+                open audio files for example. I have decided to switch to the
+                UPC package which offers 10mbps but do you think i will get it?
+              </p>
+            </div>
+            <div class="msg-left">
+              <p class="msg-left-text">
+                Sure! I will definitely help you with your query. Could you
+                please confirm your email address
+              </p>
+            </div>
+            <div class="msg-right">
+              <p class="msg-right-text">john.mayers@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-section">
+          <span class="char-counter">Current characters:0 and current words:0</span>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              placeholder="Type your message here..."
+              oninput="countChars(this)"
+              class="msg-input"
+            />
+            <div class="send-wrapper">
+              <button class="btn-send" onclick="sendMsg()">Send</button>
+              <span data-topic="myproject"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
