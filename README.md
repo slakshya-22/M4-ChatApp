@@ -13,7 +13,7 @@ ChatApp is a responsive, modern chat interface built using HTML, CSS, and vanill
 
 ## Demo
 
-*(Insert a screenshot or link to a live demo here if available.)*
+![Chat App Screenshot](Screenshot.png)
 
 ## Getting Started
 
